@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">💬 Real-Time Chat App</h1>
+
+    <div class="flex flex-col gap-3 mb-4">
+      <input id="username" type="text" placeholder="Enter your username"
+             class="px-4 py-2 border rounded w-full" />
+      <input id="room" type="text" placeholder="Enter room name"
+             class="px-4 py-2 border rounded w-full" />
+      <button onclick="joinRoom()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Join Room
+      </button>
+    </div>
+
+    <div id="chatbox" class="h-64 overflow-y-auto border rounded p-4 mb-4 bg-gray-50 text-sm"></div>
+
+    <div class="flex gap-2">
+      <input id="message" type="text" placeholder="Type a message..."
+             class="flex-1 px-4 py-2 border rounded" />
+      <button onclick="sendMessage()"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
